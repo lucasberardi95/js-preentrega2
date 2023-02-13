@@ -1,19 +1,36 @@
+class tipoDeDolar {
+    constructor(tipo, precioCompra, precioVenta) {
+        this.tipo = tipo;
+        this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
+    }
+}
+
+const blue = new tipoDeDolar("Blue", 373, 377);
+const oficial = new tipoDeDolar("Oficial", 189, 198);
+const cripto = new tipoDeDolar("Cripto", 359, 368);
+
+const tiposDeDolar = [blue, oficial, cripto];
+console.log(tiposDeDolar);
+
 function entrar(){
     alert("Bienvenido a USD Exchanges Argentina ");
     let edad = parseInt(prompt("Ingrese su edad: ")); 
     while(isNaN(edad)){
         edad = parseInt(prompt("numero invalido, vuelva a ingresar su edad: "));
     }
-    if (edad > 18) {
+    if (edad >= 18) {
         menu();
     } else {
         alert("Volve cuando seas mayor de edad");
     }
 }
 
+entrar();
+
 function menu() {
     let opcion = parseInt(prompt("Ingrese una opción: \n 1) Comprar dolares \n 2) Vender dolares \n 3) Consultar cotizacion de monedas \n 4) Salir" ));
-    return opcion;
+    return (opcion);
 }
 
 //Función para comprar dolares: 
@@ -26,7 +43,7 @@ function Comprar() {
         cantidad = parseInt(prompt("cantidad no valida, volver a ingresar monto por favor: "));
     }
     console.log(nombre, apellido, cantidad)
-    alert("Muchas gracias " + nombre + " usted debera pagar " + cantidad * 350 + " devaluadisimos pesos argentinos ")
+    alert("Muchas gracias " + nombre + " usted debera pagar " + cantidad * 377 + " devaluadisimos pesos argentinos ")
 }
 
 //Función para vender dolares: 
@@ -39,7 +56,7 @@ function Vender() {
         cantidad = parseInt(prompt("cantidad no valida, volver a ingresar monto por favor: "));
     }
     console.log(nombre, apellido, cantidad)
-    alert("Muchas gracias " + nombre + " usted recibira " + cantidad * 350 + " devaluadisimos pesos argentinos ")
+    alert("Muchas gracias " + nombre + " usted recibira " + cantidad * 373 + " devaluadisimos pesos argentinos ")
 }
 
 function Cotizacion() {
@@ -55,8 +72,7 @@ function salir() {
     alert("Gracias por confiar en USD Exchanges");
 }
 
-entrar();
-let opcion = menu();
+let opcion = menu(); 
 
 switch(opcion) {
     case 1: 
@@ -65,7 +81,6 @@ switch(opcion) {
     case 2: 
         Vender();
         break;
-        
     case 3: 
         Cotizacion();
         break;
@@ -76,3 +91,4 @@ switch(opcion) {
         alert("Opcion invalida")
         break;
 }
+
