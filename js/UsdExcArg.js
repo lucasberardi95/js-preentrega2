@@ -20,13 +20,11 @@ function entrar(){
         edad = parseInt(prompt("numero invalido, vuelva a ingresar su edad: "));
     }
     if (edad >= 18) {
-        menu();
+        edadArray.push(edad);
     } else {
         alert("Volve cuando seas mayor de edad");
     }
 }
-
-entrar();
 
 function menu() {
     let opcion = parseInt(prompt("Ingrese una opción: \n 1) Comprar dolares \n 2) Vender dolares \n 3) Consultar cotizacion de monedas \n 4) Salir" ));
@@ -66,29 +64,36 @@ function Cotizacion() {
     }
     alert(cantidad + " usd " + " es igual a " + cantidad * 350 + " pesos arg ")
 }
+
 //Función para salir del programa: 
 
 function salir() {
     alert("Gracias por confiar en USD Exchanges");
 }
 
-let opcion = menu(); 
+const edadArray = [];
 
-switch(opcion) {
-    case 1: 
-        Comprar();
-        break;
-    case 2: 
-        Vender();
-        break;
-    case 3: 
-        Cotizacion();
-        break;
-    case 4: 
-        salir();
-        break;
-    default: 
-        alert("Opcion invalida")
-        break;
+entrar();
+console.log(edadArray)
+if (edadArray[0] >= 18) {
+    let opcion = menu();
+
+    switch(opcion) {
+        case 1: 
+            Comprar();
+            break;
+        case 2: 
+            Vender();
+            break;        
+        case 3: 
+            Cotizacion();
+            break;
+        case 4: 
+            salir();
+            break;
+        default: 
+            alert("Opcion invalida. Recarga la pagina para volver a empezar.")
+            break;
+    }
+
 }
-
