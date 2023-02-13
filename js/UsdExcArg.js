@@ -10,8 +10,13 @@ const blue = new tipoDeDolar("Blue", 373, 377);
 const oficial = new tipoDeDolar("Oficial", 189, 198);
 const cripto = new tipoDeDolar("Cripto", 359, 368);
 
-const tiposDeDolar = [blue, oficial, cripto];
-console.log(tiposDeDolar);
+const arrayTiposDeDolar = [blue, oficial, cripto];
+
+console.log("ForEach:");
+
+arrayTiposDeDolar.forEach((dolares) => {
+    console.log(dolares);
+})
 
 function entrar(){
     alert("Bienvenido a USD Exchanges Argentina ");
@@ -95,5 +100,4 @@ if (edadArray[0] >= 18) {
             alert("Opcion invalida. Recarga la pagina para volver a empezar.")
             break;
     }
-
 }
