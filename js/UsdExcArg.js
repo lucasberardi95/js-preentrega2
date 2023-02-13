@@ -84,7 +84,7 @@ switch(opcion) {
     case 3: 
         Cotizacion();
         break;
-    case 3: 
+    case 4: 
         salir();
         break;
     default: 
